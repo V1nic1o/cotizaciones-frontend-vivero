@@ -8,21 +8,21 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
 }
 
-h2 {
+.editar-container h2 {
   text-align: center;
   margin-bottom: 2rem;
   color: #2d6a4f;
   font-size: 1.8rem;
 }
 
-h3 {
+.editar-container h3 {
   margin-top: 2rem;
   color: #1b4332;
   font-size: 1.3rem;
 }
 
-input,
-select {
+.editar-container input,
+.editar-container select {
   width: 100%;
   padding: 0.75rem;
   margin: 0.3rem 0 1rem;
@@ -32,14 +32,14 @@ select {
   background-color: #fdfdfd;
 }
 
-label {
+.editar-container label {
   font-weight: 600;
   margin-bottom: 0.2rem;
   display: block;
   color: #333;
 }
 
-.fila-producto {
+.editar-container .fila-producto {
   background: #e9f5e9;
   border: 1px solid #c3e6cb;
   border-radius: 8px;
@@ -50,12 +50,17 @@ label {
   gap: 1rem;
 }
 
-.fila-producto input,
-.fila-producto select {
-  flex: 1 1 100%;
+.editar-container .fila-producto > div {
+  flex: 1 1 45%;
+  min-width: 120px;
 }
 
-.total-parcial {
+.editar-container .fila-producto input,
+.editar-container .fila-producto select {
+  width: 100%;
+}
+
+.editar-container .total-parcial {
   font-weight: bold;
   margin-top: 0.5rem;
   color: #2d6a4f;
@@ -63,7 +68,7 @@ label {
   width: 100%;
 }
 
-button.guardar-btn {
+.editar-container button.guardar-btn {
   width: 100%;
   padding: 1rem;
   margin-top: 1.5rem;
@@ -77,11 +82,11 @@ button.guardar-btn {
   transition: background-color 0.3s ease;
 }
 
-button.guardar-btn:hover {
+.editar-container button.guardar-btn:hover {
   background-color: #2d6a4f;
 }
 
-button.agregar {
+.editar-container button.agregar {
   width: 100%;
   padding: 0.9rem;
   margin-top: 0.5rem;
@@ -94,11 +99,11 @@ button.agregar {
   transition: background-color 0.3s ease;
 }
 
-button.agregar:hover {
+.editar-container button.agregar:hover {
   background-color: #1b4332;
 }
 
-button.eliminar {
+.editar-container button.eliminar {
   background-color: #d9534f;
   color: white;
   border: none;
@@ -110,11 +115,11 @@ button.eliminar {
   transition: background-color 0.3s ease;
 }
 
-button.eliminar:hover {
+.editar-container button.eliminar:hover {
   background-color: #c9302c;
 }
 
-.mensaje-alerta {
+.editar-container .mensaje-alerta {
   background-color: #fff3cd;
   border: 1px solid #ffeeba;
   color: #856404;
@@ -125,18 +130,18 @@ button.eliminar:hover {
   border-radius: 6px;
 }
 
-.cliente-form {
+.editar-container .cliente-form {
   margin-bottom: 2.5rem;
 }
 
-.boton-flotante {
+.editar-container .boton-flotante {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 999;
 }
 
-.boton-flotante button {
+.editar-container .boton-flotante button {
   background-color: #1e90ff;
   border: none;
   color: white;
@@ -147,50 +152,54 @@ button.eliminar:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.boton-flotante button:hover {
+.editar-container .boton-flotante button:hover {
   background-color: #0f65c3;
 }
 
-/* ✅ Mejora para dispositivos móviles */
+/* ✅ Mejora avanzada para dispositivos móviles */
 @media (max-width: 600px) {
   .editar-container {
     padding: 1rem;
   }
 
-  h2 {
+  .editar-container h2 {
     font-size: 1.5rem;
   }
 
-  h3 {
+  .editar-container h3 {
     font-size: 1.2rem;
   }
 
-  input,
-  select {
+  .editar-container input,
+  .editar-container select {
     font-size: 0.95rem;
   }
 
-  .fila-producto {
+  .editar-container .fila-producto {
     flex-direction: column;
     gap: 0.5rem;
   }
 
-  .total-parcial {
+  .editar-container .fila-producto > div {
+    flex: 1 1 100%;
+  }
+
+  .editar-container .total-parcial {
     text-align: left;
   }
 
-  button.guardar-btn,
-  button.agregar {
+  .editar-container button.guardar-btn,
+  .editar-container button.agregar {
     font-size: 1rem;
     padding: 0.9rem;
   }
 
-  .boton-flotante {
+  .editar-container .boton-flotante {
     bottom: 15px;
     right: 15px;
   }
 
-  .boton-flotante button {
+  .editar-container .boton-flotante button {
     font-size: 18px;
     padding: 12px;
   }

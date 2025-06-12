@@ -8,30 +8,32 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+.cotizacion-container h2 {
   text-align: center;
   margin-bottom: 1.5rem;
   color: #2d6a4f;
+  font-size: 1.8rem;
 }
 
-input,
-select {
+.cotizacion-container input,
+.cotizacion-container select {
   padding: 0.6rem;
   margin: 0.3rem 0 0.8rem;
   border-radius: 6px;
   border: 1px solid #ccc;
   width: 100%;
   font-size: 1rem;
+  background-color: #fff;
 }
 
-label {
+.cotizacion-container label {
   font-weight: 600;
   margin-bottom: 0.2rem;
   display: block;
   color: #333;
 }
 
-.fila-producto {
+.cotizacion-container .fila-producto {
   background: #e9f5e9;
   padding: 1rem;
   margin-bottom: 1.5rem;
@@ -42,30 +44,35 @@ label {
   gap: 1rem;
 }
 
-.fila-producto input,
-.fila-producto select {
-  flex: 1 1 100%;
+.cotizacion-container .fila-producto > div {
+  flex: 1 1 45%;
+  min-width: 120px;
+}
+
+.cotizacion-container .fila-producto input,
+.cotizacion-container .fila-producto select {
+  width: 100%;
   margin-top: 0.2rem;
 }
 
-.fila-producto button {
+.cotizacion-container .fila-producto button {
   background: transparent;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #d90429;
   cursor: pointer;
-  margin-top: 0.5rem;
-  align-self: flex-end;
+  align-self: center;
 }
 
-.total-parcial {
-  display: inline-block;
-  margin-top: 0.5rem;
+.cotizacion-container .total-parcial {
   font-weight: bold;
   color: #2d6a4f;
+  margin-top: 0.5rem;
+  flex-basis: 100%;
+  text-align: right;
 }
 
-.agregar {
+.cotizacion-container .agregar {
   margin-top: 0.8rem;
   background-color: #2d6a4f;
   color: white;
@@ -78,7 +85,7 @@ label {
   cursor: pointer;
 }
 
-.guardar-btn {
+.cotizacion-container .guardar-btn {
   width: 100%;
   padding: 1rem;
   background-color: #40916c;
@@ -92,18 +99,18 @@ label {
   transition: background-color 0.3s ease;
 }
 
-.guardar-btn:hover {
+.cotizacion-container .guardar-btn:hover {
   background-color: #2d6a4f;
 }
 
-.resumen {
+.cotizacion-container .resumen {
   margin-top: 1.5rem;
   text-align: center;
   font-size: 1.2rem;
   color: #1b4332;
 }
 
-.mensaje-alerta {
+.cotizacion-container .mensaje-alerta {
   margin-top: 1rem;
   padding: 1rem;
   border-radius: 6px;
@@ -114,14 +121,14 @@ label {
   border: 1px solid #ffeeba;
 }
 
-.boton-flotante {
+.cotizacion-container .boton-flotante {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 999;
 }
 
-.boton-flotante button {
+.cotizacion-container .boton-flotante button {
   background-color: #1e90ff;
   border: none;
   color: white;
@@ -132,42 +139,46 @@ label {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.boton-flotante button:hover {
+.cotizacion-container .boton-flotante button:hover {
   background-color: #0f65c3;
 }
 
-/* ✅ Mejora para dispositivos móviles */
+/* ✅ Mejora avanzada para móviles */
 @media (max-width: 600px) {
   .cotizacion-container {
     padding: 1rem;
   }
 
-  .fila-producto {
+  .cotizacion-container .fila-producto {
     flex-direction: column;
     gap: 0.5rem;
   }
 
-  input,
-  select {
-    font-size: 0.95rem;
+  .cotizacion-container h2 {
+    font-size: 1.5rem;
   }
 
-  .agregar,
-  .guardar-btn {
+  .cotizacion-container input,
+  .cotizacion-container select {
+    font-size: 1rem;
+  }
+
+  .cotizacion-container .agregar,
+  .cotizacion-container .guardar-btn {
     font-size: 1rem;
     padding: 0.9rem;
   }
 
-  .resumen {
+  .cotizacion-container .resumen {
     font-size: 1.1rem;
   }
 
-  .boton-flotante {
+  .cotizacion-container .boton-flotante {
     bottom: 15px;
     right: 15px;
   }
 
-  .boton-flotante button {
+  .cotizacion-container .boton-flotante button {
     font-size: 18px;
     padding: 12px;
   }

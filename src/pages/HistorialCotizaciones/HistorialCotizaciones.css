@@ -3,19 +3,23 @@
   max-width: 900px;
   margin: auto;
   font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  border-radius: 12px;
 }
 
 .historial-container h2 {
   text-align: center;
   margin-bottom: 1.5rem;
   color: #2d6a4f;
+  font-size: 1.7rem;
 }
 
 .historial-container .filtros {
   display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
   margin-bottom: 1.5rem;
+  justify-content: space-between;
 }
 
 .historial-container .filtros input,
@@ -24,16 +28,19 @@
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  flex: 1 1 200px;
+  min-width: 150px;
 }
 
 .historial-container .filtros button {
-  padding: 0.6rem;
+  padding: 0.6rem 1rem;
   background-color: #2d6a4f;
   color: white;
   border: none;
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
+  flex: 1 1 100px;
 }
 
 .historial-container .lista-cotizaciones {
@@ -61,16 +68,18 @@
   padding: 0.5rem;
   border-radius: 6px;
   font-size: 0.95rem;
+  width: 100%;
 }
 
 .historial-container .botones-cotizacion {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.8rem;
 }
 
 .historial-container .botones-cotizacion button {
-  flex: 1;
+  flex: 1 1 48%;
   padding: 0.6rem;
   background-color: #40916c;
   color: white;
@@ -85,7 +94,6 @@
   background-color: #2d6a4f;
 }
 
-/* Estilo especial para el botón eliminar */
 .historial-container .botones-cotizacion .eliminar-btn {
   background-color: #d9534f;
 }
@@ -105,7 +113,7 @@
   margin-bottom: 1rem;
 }
 
-.botones-flotantes {
+.historial-container .botones-flotantes {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -115,7 +123,7 @@
   z-index: 999;
 }
 
-.botones-flotantes button {
+.historial-container .botones-flotantes button {
   background-color: #1e90ff;
   border: none;
   color: white;
@@ -123,11 +131,11 @@
   padding: 12px;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: background 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s;
 }
 
-.botones-flotantes button:hover {
+.historial-container .botones-flotantes button:hover {
   background-color: #0f65c3;
 }
 
@@ -137,20 +145,24 @@
     padding: 1rem;
   }
 
+  .historial-container h2 {
+    font-size: 1.5rem;
+  }
+
   .historial-container .filtros {
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 0.6rem;
   }
 
   .historial-container .filtros input,
   .historial-container .filtros select,
   .historial-container .filtros button {
-    font-size: 0.9rem;
     width: 100%;
+    font-size: 0.95rem;
   }
 
   .historial-container .card-cotizacion {
     padding: 1rem;
-    font-size: 0.95rem;
   }
 
   .historial-container .botones-cotizacion {
@@ -161,12 +173,12 @@
     width: 100%;
   }
 
-  .botones-flotantes {
-    bottom: 10px;
-    right: 10px;
+  .historial-container .botones-flotantes {
+    bottom: 12px;
+    right: 12px;
   }
 
-  .botones-flotantes button {
+  .historial-container .botones-flotantes button {
     padding: 10px;
     font-size: 18px;
   }

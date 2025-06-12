@@ -6,7 +6,7 @@ import './CotizacionNueva.css';
 export default function CotizacionNueva() {
   const [cliente, setCliente] = useState({ nombre: '', nit: '' });
   const [productos, setProductos] = useState([
-    { descripcion: '', cantidad: 1, precioUnitario: 0, total: 0, tipo: 'bien' }
+    { descripcion: '', cantidad: '', precioUnitario: '', total: 0, tipo: 'bien' }
   ]);
   const [mensaje, setMensaje] = useState('');
   const navigate = useNavigate();
@@ -14,12 +14,17 @@ export default function CotizacionNueva() {
   const calcularTotales = (index) => {
     const nuevos = [...productos];
     const p = nuevos[index];
-    p.total = p.cantidad * p.precioUnitario;
+    const cantidad = parseFloat(p.cantidad) || 0;
+    const precio = parseFloat(p.precioUnitario) || 0;
+    p.total = cantidad * precio;
     setProductos(nuevos);
   };
 
   const agregarFila = () => {
-    setProductos([...productos, { descripcion: '', cantidad: 1, precioUnitario: 0, total: 0, tipo: 'bien' }]);
+    setProductos([
+      ...productos,
+      { descripcion: '', cantidad: '', precioUnitario: '', total: 0, tipo: 'bien' }
+    ]);
   };
 
   const eliminarFila = (index) => {
@@ -35,7 +40,10 @@ export default function CotizacionNueva() {
       setMensaje('Por favor completa los datos del cliente.');
       return;
     }
-    if (productos.length === 0 || productos.some(p => !p.descripcion || p.cantidad <= 0 || p.precioUnitario <= 0)) {
+    if (
+      productos.length === 0 ||
+      productos.some(p => !p.descripcion || !p.cantidad || !p.precioUnitario)
+    ) {
       setMensaje('Verifica que todos los productos estén completos.');
       return;
     }
@@ -53,7 +61,6 @@ export default function CotizacionNueva() {
       const cotizacionId = resCotizacion.data.cotizacionId;
       setMensaje('✅ Cotización guardada correctamente');
 
-      // Descargar PDF con nombre personalizado
       const url = `https://cotizaciones-backend-vivero.onrender.com/api/cotizaciones/pdf/${cotizacionId}`;
       const response = await fetch(url);
       const blob = await response.blob();
@@ -67,10 +74,9 @@ export default function CotizacionNueva() {
       // Limpiar campos
       setCliente({ nombre: '', nit: '' });
       setProductos([
-        { descripcion: '', cantidad: 1, precioUnitario: 0, total: 0, tipo: 'bien' }
+        { descripcion: '', cantidad: '', precioUnitario: '', total: 0, tipo: 'bien' }
       ]);
 
-      // Redirigir al historial después de un breve retardo
       setTimeout(() => {
         navigate('/historial');
       }, 1000);
@@ -139,7 +145,7 @@ export default function CotizacionNueva() {
               value={p.cantidad}
               onChange={e => {
                 const nuevos = [...productos];
-                nuevos[index].cantidad = Number(e.target.value);
+                nuevos[index].cantidad = e.target.value;
                 calcularTotales(index);
               }}
             />
@@ -152,7 +158,7 @@ export default function CotizacionNueva() {
               value={p.precioUnitario}
               onChange={e => {
                 const nuevos = [...productos];
-                nuevos[index].precioUnitario = Number(e.target.value);
+                nuevos[index].precioUnitario = e.target.value;
                 calcularTotales(index);
               }}
             />
@@ -171,7 +177,6 @@ export default function CotizacionNueva() {
 
       {mensaje && <div className="mensaje-alerta">{mensaje}</div>}
 
-      {/* ✅ Botón flotante para ir a inicio */}
       <div className="boton-flotante">
         <button onClick={() => navigate('/')} title="Ir a Inicio">🏠</button>
       </div>
