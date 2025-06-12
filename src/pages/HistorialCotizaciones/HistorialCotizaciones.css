@@ -1,0 +1,173 @@
+.historial-container {
+  padding: 1.5rem;
+  max-width: 900px;
+  margin: auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.historial-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2d6a4f;
+}
+
+.historial-container .filtros {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.historial-container .filtros input,
+.historial-container .filtros select {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.historial-container .filtros button {
+  padding: 0.6rem;
+  background-color: #2d6a4f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.historial-container .lista-cotizaciones {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.historial-container .card-cotizacion {
+  background-color: #e6f4ea;
+  padding: 1.2rem;
+  border-radius: 10px;
+  border: 1px solid #b7e4c7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.historial-container .card-cotizacion p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+  color: #1b4332;
+}
+
+.historial-container .card-cotizacion select {
+  margin-top: 0.4rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.historial-container .botones-cotizacion {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.historial-container .botones-cotizacion button {
+  flex: 1;
+  padding: 0.6rem;
+  background-color: #40916c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.historial-container .botones-cotizacion button:hover {
+  background-color: #2d6a4f;
+}
+
+/* Estilo especial para el botón eliminar */
+.historial-container .botones-cotizacion .eliminar-btn {
+  background-color: #d9534f;
+}
+
+.historial-container .botones-cotizacion .eliminar-btn:hover {
+  background-color: #c9302c;
+}
+
+.historial-container .mensaje-alerta {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+  padding: 0.8rem;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.botones-flotantes {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+
+.botones-flotantes button {
+  background-color: #1e90ff;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background 0.2s;
+}
+
+.botones-flotantes button:hover {
+  background-color: #0f65c3;
+}
+
+/* ✅ Mejora para móviles */
+@media (max-width: 600px) {
+  .historial-container {
+    padding: 1rem;
+  }
+
+  .historial-container .filtros {
+    gap: 0.5rem;
+  }
+
+  .historial-container .filtros input,
+  .historial-container .filtros select,
+  .historial-container .filtros button {
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .historial-container .card-cotizacion {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .historial-container .botones-cotizacion {
+    flex-direction: column;
+  }
+
+  .historial-container .botones-cotizacion button {
+    width: 100%;
+  }
+
+  .botones-flotantes {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .botones-flotantes button {
+    padding: 10px;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,174 @@
+.cotizacion-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2d6a4f;
+}
+
+input,
+select {
+  padding: 0.6rem;
+  margin: 0.3rem 0 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 1rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  display: block;
+  color: #333;
+}
+
+.fila-producto {
+  background: #e9f5e9;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #cdeccd;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.fila-producto input,
+.fila-producto select {
+  flex: 1 1 100%;
+  margin-top: 0.2rem;
+}
+
+.fila-producto button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #d90429;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  align-self: flex-end;
+}
+
+.total-parcial {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #2d6a4f;
+}
+
+.agregar {
+  margin-top: 0.8rem;
+  background-color: #2d6a4f;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.guardar-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #40916c;
+  color: white;
+  border: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.guardar-btn:hover {
+  background-color: #2d6a4f;
+}
+
+.resumen {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #1b4332;
+}
+
+.mensaje-alerta {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #fff3cd;
+  color: #856404;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid #ffeeba;
+}
+
+.boton-flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.boton-flotante button {
+  background-color: #1e90ff;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.boton-flotante button:hover {
+  background-color: #0f65c3;
+}
+
+/* ✅ Mejora para dispositivos móviles */
+@media (max-width: 600px) {
+  .cotizacion-container {
+    padding: 1rem;
+  }
+
+  .fila-producto {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  input,
+  select {
+    font-size: 0.95rem;
+  }
+
+  .agregar,
+  .guardar-btn {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+
+  .resumen {
+    font-size: 1.1rem;
+  }
+
+  .boton-flotante {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .boton-flotante button {
+    font-size: 18px;
+    padding: 12px;
+  }
+}
