@@ -54,7 +54,7 @@ export default function CotizacionNueva() {
       setMensaje('✅ Cotización guardada correctamente');
 
       // Descargar PDF con nombre personalizado
-      const url = `http://localhost:4000/api/cotizaciones/pdf/${cotizacionId}`;
+      const url = `https://cotizaciones-backend-vivero.onrender.com/api/cotizaciones/pdf/${cotizacionId}`;
       const response = await fetch(url);
       const blob = await response.blob();
 

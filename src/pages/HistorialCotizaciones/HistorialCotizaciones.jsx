@@ -30,7 +30,7 @@ export default function HistorialCotizaciones() {
 
   const handleDescargarPDF = async (id, nombreCliente) => {
     try {
-      const url = `http://localhost:4000/api/cotizaciones/pdf/${id}`;
+      const url = `https://cotizaciones-backend-vivero.onrender.com/api/cotizaciones/pdf/${id}`;
       const response = await fetch(url);
       const blob = await response.blob();
 
